@@ -1,8 +1,12 @@
 import re,os
 
 from openai import OpenAI
+from dotenv import load_dotenv
 
-DEEPSEEK_API_KEY = os.environ["DEEPSEEK_API_KEY"]
+load_dotenv()
+
+# 读取.env文件
+DEEPSEEK_API_KEY=os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_BASE_URL = "https://api.deepseek.com/v1"  # DeepSeek API端点
 DEFAULT_MODEL = "deepseek-chat"  # DeepSeek的模型名称
 client = OpenAI(
